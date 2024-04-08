@@ -33,14 +33,17 @@ const CoursesForm = () => {
 
     const onNameChange = (event: React.SyntheticEvent<Element, Event>, values: string | null) => {
         setCourseName(values);
+        event
         // console.log(values);
     }
     const onProfChange = (event: React.SyntheticEvent<Element, Event>, values: string | null) => {
         setProfName(values);
+        event
     }
     const onTagsChange = (event: React.SyntheticEvent<Element, Event>, values: string[]) => {
         // setProfName(values);
         setTags(values);
+        event
     }
 
     const handleEditClick = (course: Course) => {
@@ -74,6 +77,7 @@ const CoursesForm = () => {
                             className='Input Fields'
                             id="free-solo-demo"
                             freeSolo
+                            readOnly={!flag}
                             options={options}
                             value={course.courseName}
                             sx={{ width: "55%", height: "80px", marginBottom: "10px", marginTop: "10px" }}
@@ -84,6 +88,7 @@ const CoursesForm = () => {
                             disablePortal
                             id="free-solo-demo"
                             freeSolo
+                            readOnly={!flag}
                             options={options}
                             value={course.instructorName}
                             sx={{ width: "55%", height: "80px", marginBottom: "10px" }}
@@ -95,6 +100,7 @@ const CoursesForm = () => {
                             multiple
                             id="tags-outlined"
                             options={values}
+                            readOnly={!flag}
                             sx={{ width: "55%", height: "80px", marginBottom: "10px" }}
                             getOptionLabel={(option) => option}
                             defaultValue={course.tags}
