@@ -1,0 +1,15 @@
+.homeContainer{
+    height: 100vh;
+    background-color: aqua;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    >div{
+        margin-bottom: 50px;
+        font-weight: 600;
+        font-size: 40px;
+        cursor: pointer;
+    }
+}
